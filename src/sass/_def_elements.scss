@@ -1,0 +1,515 @@
+@import "_variables";
+
+@mixin centerimg() {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+// typography 
+@mixin button($weight:700) {
+    font-family: $assistant;
+    font-weight: $weight;
+    line-height: normal;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: #000000;
+    text-decoration: none;
+    @media screen and (max-width: 666px){
+        font-size: 12px;
+    }
+}
+@mixin link-def($weight:400) {
+    display: block;
+    height: 20px;
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 15px;
+letter-spacing: 0.1em;
+color: #000000;
+text-decoration: none;
+background-position: bottom right;
+background-repeat: repeat-x;
+background-size: auto;
+background-image: url($link_line);
+}
+@mixin link-hover($weight:400) {
+    display: block;
+    height: 20px;
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 15px;
+letter-spacing: 0.1em;
+color: $red;
+text-decoration: none;
+background-position: bottom right;
+background-repeat: repeat-x;
+background-size: auto;
+background-image: url($link_line_hv);
+}
+
+@mixin h1($weight:600) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 70px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #000000;
+@media screen and (max-width: 992px){
+    font-size: 60px;
+}
+}
+@mixin h2($weight:600) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 50px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #000000;
+@media screen and (max-width: 992px){
+    font-size: 40px;
+}
+}
+@mixin h3($weight:700) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 40px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #000000;
+@media screen and (max-width: 992px){
+    font-size: 30px;
+}
+}
+@mixin h4($weight:600) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 30px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #000000;
+@media screen and (max-width: 992px){
+    font-size: 25px;
+}
+@media screen and (max-width: 767px){
+    font-size: 20px;
+}
+}
+@mixin h5($weight:700) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 23px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #000000;
+}
+@mixin h6($weight:600) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 20px;
+letter-spacing: 0.05em;
+color: #000000;
+}
+@mixin simple($weight:300) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 20px;
+letter-spacing: 0.1em;
+color: #000000;
+@media screen and (max-width: 992px){
+    font-size: 18px;
+}
+@media screen and (max-width: 479px){
+    font-size: 15px;
+}
+}
+@mixin small($weight:300) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 15px;
+letter-spacing: 0.1em;
+color: #000000;
+@media screen and (max-width: 992px){
+    font-size: 12px;
+}
+}
+@mixin verysmall($weight:300) {
+    font-family: $assistant;
+font-weight: $weight;
+line-height: normal;
+font-size: 12px;
+letter-spacing: 0.1em;
+color: #000000;
+}
+@mixin list() {
+    @include small();
+    padding-right: 0;
+    list-style-image: url($plus_list);
+    list-style-position: inside;
+    li {
+        margin: 15px 0;
+    }
+}
+
+// buttons 
+@mixin popularity($direct, $activ) {
+    @if $activ == "active" {
+        @if $direct == "up" {
+            background-image: url($arrow_up_black);
+        } @else {
+            background-image: url($arrow_up_black);
+            transform: rotate(180deg);
+        }
+    } @else {
+        @if $direct == "up" {
+            background-image: url($arrow_down_grey);
+            transform: rotate(180deg);
+        } @else {
+            background-image: url($arrow_down_grey);
+        }
+    }
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+@mixin arrow-button($direct) {
+    @if $direct == "left" {
+        background-image: url($arrow__def);
+    } @else {
+        background-image: url($arrow__def);
+        transform: rotate(180deg);
+    }
+    &:hover {
+        @if $direct == "left" {
+            background-image: url($arrow__hover);
+        } @else {
+            background-image: url($arrow__hover);
+        }
+    }
+    transition: background-image 0.3s ease-out;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    cursor: url(../images/icons/Pointer.png), url(../images/icons/Pointer.cur), pointer;
+    @media screen and (max-width: 1280px){
+        width: 50px;
+    height: 50px;
+    }
+    @media screen and (max-width: 1024px){
+        width: 45px;
+        height: 45px;
+    }
+    @media screen and (max-width: 992px){
+        width: 40px;
+        height: 40px;
+    }
+    @media screen and (max-width: 767px){
+        width: 35px;
+        height: 35px;
+    }
+}
+@mixin arrow-button-trans($direct) {
+    @if $direct == "left" {
+        background-image: url($arrow_inst_def);
+    } @else {
+        background-image: url($arrow_inst_def);
+        transform: rotate(180deg);
+    }
+    &:hover {
+        @if $direct == "left" {
+            background-image: url($arrow__hover);
+        } @else {
+            background-image: url($arrow__hover);
+        }
+    }
+    transition: background-image 0.3s ease-out;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    cursor: url(../images/icons/Pointer.png), url(../images/icons/Pointer.cur), pointer;
+    @media screen and (max-width: 1280px){
+        width: 50px;
+    height: 50px;
+    }
+    @media screen and (max-width: 1024px){
+        width: 45px;
+        height: 45px;
+    }
+    @media screen and (max-width: 992px){
+        width: 40px;
+        height: 40px;
+    }
+    @media screen and (max-width: 767px){
+        width: 35px;
+        height: 35px;
+    }
+}
+@mixin button-white($h:60px, $w:233px) {
+    @include button();
+    background-color: #fff;
+    display: inline-flex;
+    text-decoration: none;
+    text-align: center;
+    border: 0.5px solid #000000;
+    width: $w;
+    height: $h;
+    justify-content: center;
+    align-items: center;
+    cursor: url(../images/icons/Pointer.png), url(../images/icons/Pointer.cur), pointer;
+
+    &:hover {
+        background-color: $beige;
+        border: none;
+    }
+}
+@mixin button-black($h:60px, $w:233px) {
+    @include button();
+    color: #fff;
+    background-color: #000;
+    display: inline-flex;
+    text-decoration: none;
+    text-align: center;
+    width: $w;
+    height: $h;
+    border: none;
+    justify-content: center;
+    align-items: center; 
+    cursor: url(../images/icons/Pointer.png), url(../images/icons/Pointer.cur), pointer;
+
+    &:hover {
+        background-color: $red;
+    }
+}
+@mixin button-beige($h:60px, $w:233px) {
+    @include button();
+    background-color: $beige;
+    display: inline-flex;
+    text-decoration: none;
+    text-align: center;
+    width: $w;
+    height: $h;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: url(../images/icons/Pointer.png), url(../images/icons/Pointer.cur), pointer;
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+// icon buttons 
+@mixin blocked() {
+    background-position: center;
+    background-image: url($blocked_plus_red);
+
+    &:hover {
+        background-image: url($blocked_plus_black);
+    }
+}
+@mixin blocked($select) {
+    background-position: center;
+    background-image: url($heart_def);
+
+    &:hover {
+        background-image: url($heart_hover);
+    }
+    @if $select == "red" {
+        background-image: url($heart_hover);
+    }
+}
+
+// inputs 
+@mixin input($state:"default", $w:395px, $h:50px) {
+    @include small();
+    display: block;
+    padding: 14px;
+    box-sizing: border-box;
+    width: $w;
+    height: $h;
+    background-color: #fff;
+    @if $state == "default" {
+        border: 0.5px solid $color_input_def;
+    } @else if $state == "active" {
+        border: 0.5px solid $color_inpt_active;
+    } @else if $state == "error" {
+        border: 0.5px solid $color_input_error;
+    } @else {
+        border: 0.5px solid $color_input_disabled;
+        color: $color_input_disabled;
+    }
+}
+@mixin checkbox() {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    
+    input {
+        display: none;
+    }
+    label {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .rect {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            @include centerimg();
+            background-size: cover;
+            background-image: url($check_disabled);
+            margin-left: 20px;
+            margin-top: 3px;
+        }
+        span:not(.rect) {
+            @include small();
+        }
+    }
+    input:checked {
+        &+label {
+            .rect {
+                background-image: url($check_enabled);
+            }
+            span:not(.rect) {
+                color: $red;
+            }
+        }
+    }
+    input:disabled {
+        &+label {
+            span:not(.rect) {
+                color: $color_input_disabled;
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px){
+        label {
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0 25px;
+    
+            .rect {
+                order: 2;
+                width: 16px;
+                height: 10px;
+                background-size: contain;
+                background-image: none;
+                margin: 0;
+            }
+            span:not(.rect) {
+                order: 1;
+                @include h5(400);
+            }
+        }
+        input:checked {
+            &+label {
+                .rect {
+                    background-image: url($check_mark_r);
+                }
+                span:not(.rect) {
+                    font-weight: 700;
+                    color: $red;
+                }
+            }
+        }
+        input:disabled {
+            &+label {
+                span:not(.rect) {
+                    color: $color_input_disabled;
+                }
+            }
+        }
+    }
+}
+@mixin radio() {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    
+    input {
+        display: none;
+    }
+    label {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .rect {
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            min-width: 17px;
+            @include centerimg();
+            background-size: contain;
+            background-image: url($radio_disabled);
+            margin-left: 20px;
+            margin-top: 3px;
+        }
+        span:not(.rect) {
+            flex-grow: 3;
+            @include small();
+        }
+    }
+    input:checked {
+        &+label {
+            .rect {
+                background-image: url($radio_enabled);
+            }
+            span:not(.rect) {
+                color: $red;
+            }
+        }
+    }
+    input:disabled {
+        &+label {
+            .rect {
+                background-image: url($radio_disabled);
+            }
+            span:not(.rect) {
+                color: $color_input_disabled;
+            }
+        }
+    }
+}
+
+// tooltip 
+@mixin tooltip() {
+    background-color: #000;
+    font-family: $assistant;
+font-weight: 600;
+line-height: normal;
+font-size: 12px;
+letter-spacing: 0.1;
+color: #FFFFFF;
+}

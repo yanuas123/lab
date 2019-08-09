@@ -1,0 +1,158 @@
+<div class="hidden-block">
+
+    <!-- fast buy -->
+    <div id="fast_buy" class="pop">
+        <div class="phone-title">
+            <p>
+                <span>הוסף כתובת</span>
+                <span class="img"></span>
+            </p>
+        </div>
+        <div class="fast-by-content">
+            <form name="fast_buy_form" novalidate>
+                <div class="inputs">
+                    <span>ירשפאה םדקהב רשקתי ונלש להנמהו ךלש רפסמה תא ראשה</span>
+                    <input type="tel" name="phone" placeholder="phone" required>
+                    <div class="error-msg">
+                        <span class="bad">Invalid phone number!</span>
+                        <span class="empty">Please, type phone number!</span>
+                    </div>
+                </div>
+                <div class="button">
+                    <button type="submit" id="fast_buy_sbm">חולשל</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- add new address -->
+    <div id="newaddress" class="form-content popup pop">
+        <form name="newaddress" novalidate>
+            <div class="pop-form-title">
+                <span>הוסף כתובת</span>
+            </div>
+            <select name="country" required data-placeholder="country">
+                    <option value=""></option>
+                    <option value="uk">Ukraine</option>
+                    <option value="is">Israel</option>
+                    <option value="gr">Grice</option>
+            </select>
+            <div class="error-msg country-error">
+                <span class="empty">Please, select country!</span>
+            </div>
+            <select name="city" required data-placeholder="city">
+                <option value=""></option>
+                <option value="hf">Haifa</option>
+                <option value="er">Erusalem</option>
+                <option value="gr">Grice</option>
+            </select>
+            <div class="error-msg city-error">
+                <span class="empty">Please, select city!</span>
+            </div>
+            <input type="text" name="address" placeholder="address" required>
+            <div class="error-msg">
+                <span class="bad">Invalid address!</span>
+                <span class="empty">Please, type address!</span>
+            </div>
+            <div class="double-input">
+                <input type="text" name="house_nmber" placeholder="house number" required>
+                <input type="text" name="flat_nmber" placeholder="flat number">
+            </div>
+            <div class="error-msg house_nmber"> <!--must have class such as input-->
+                <span class="empty">Please, type house number!</span>
+            </div>
+            <div class="error-msg flat_nmber"> <!--must have class such as input-->
+                <span class="empty">Please, type flat number!</span>
+            </div>
+            <input type="number" name="index" placeholder="index" required>
+            <div class="error-msg">
+                <span class="bad">Your index must have 6 character!</span>
+                <span class="empty">Please, type index!</span>
+            </div>
+            <button type="submit" id="newaddress_sbm">ףסוה</button>
+        </form>
+    </div>
+
+    <!-- registration pop-up -->
+    <div id="registration_popup" class="form-content popup registration pop">
+        <div class="mark-title">
+            <span>LABASS</span>
+        </div>
+        <form name="registration" novalidate>
+            <div class="pop-form-title links-group">
+                <span>םושיר</span>
+            </div>
+            <div class="networks-group links-group">
+                <p>להתחבר עם רשתות חברתיות</p>
+                <div class="networks-group-ins">
+                    <a class="facebook" href="#" id="facebook_reg"></a>
+                    <a class="google" href="#" id="google_reg"></a>
+                </div>
+            </div>
+            <div class="form-title">
+                <span>םיישיא םינותנ</span>
+            </div>
+            <input type="text" name="pa_name" placeholder="name" required>
+            <div class="error-msg">
+                <span class="empty">Please, type your name!</span>
+            </div>
+            <input type="text" name="pa_surname" placeholder="surname">
+            <div class="error-msg">
+                <span class="empty">Please, type your surname!</span>
+            </div>
+            <input type="email" name="pa_email" placeholder="e-mail">
+            <div class="error-msg">
+                <span class="bad">Please type correctly e-mail!</span>
+                <span class="empty">Please, type your e-mail!</span>
+            </div>
+            <input type="tel" name="pa_phone" placeholder="phone">
+            <div class="error-msg">
+                <span class="bad">Invalid phone number!</span>
+                <span class="empty">Please, type phone number!</span>
+            </div>
+            <div class="form-title">
+                <span>המסיס</span>
+            </div>
+            <input type="password" name="password" placeholder="pass" required>
+            <div class="error-msg">
+                <span class="empty">Please type pass!</span>
+                <span class="bad">Invalid pass!</span>
+            </div>
+            <input type="password" name="password2" placeholder="repeat pass">
+            <div class="error-msg">
+                <span class="bad">Pass must to repeat previous!</span>
+                <span class="empty">Please, type repeat pass!</span>
+            </div>
+            <div class="check">
+                <input type="checkbox" name="reg_checkbox" value="reg_checkbox" id="reg_checkbox">
+                <label for="reg_checkbox">
+                    <span class="rect"></span>
+                    <span class="little">םיאנתל םיכסמ ינא</span>
+                </label>
+                <div class="error-msg reg_checkbox bi1">
+                    <span class="empty">Please agree!</span>
+                </div>
+            </div>
+            <button type="submit" id="registration_sbm">רישום</button>
+        </form>
+    </div>
+
+    <!-- checkout confirmation -->
+    <div class="confirm-pop pop" id="confirm_popup">
+        <div class="confirm-pop-ins">
+            <div class="confirm-title">
+                <p>
+                    <span>קודבל</span>
+                    <span class="bag"></span>
+                </p>
+            </div>
+            <div class="message">
+                <span>Thank you for the order!</span>
+            </div>
+            <button type="button" id="fancy_confirm_close">
+                <span>OK</span>
+            </button>
+        </div>
+    </div>
+
+</div>
