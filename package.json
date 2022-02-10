@@ -15,6 +15,6 @@
     "gulp-sass": "*",
     "gulp-uglify": "^1.1.0",
     "gulp-watch": "^4.3.5",
-    "node-sass": "^4.10.0"
+    "node-sass": "^7.0.0"
   }
 }
